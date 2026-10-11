@@ -1,0 +1,94 @@
+/* ===== RESET ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== TEMA ===== */
+
+:root {
+
+    --bg-primary: #0f172a;
+    --bg-card: #1e293b;
+
+    --blue-primary: #3b82f6;
+    --blue-secondary: #60a5fa;
+
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+
+    --border-color: rgba(59, 130, 246, 0.25);
+}
+
+/* ===== BASE ===== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family: 'Inter', sans-serif;
+
+    background: var(--bg-primary);
+    color: var(--text-primary);
+
+    overflow-x: hidden;
+}
+
+/* ===== NAVBAR ===== */
+
+.navbar {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 60px;
+
+    backdrop-filter: blur(12px);
+
+    background: rgba(15, 23, 42, 0.90);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    z-index: 999;
+
+    transition: transform .3s ease;
+}
+
+.logo {
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    letter-spacing: .3px;
+}
+
+.navbar nav {
+
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+
+    text-decoration: none;
+
+    color: var(--text-secondary);
+
+    transition: .3s ease;
+}
+
+.navbar nav a:hover {
+
+    color: var(--blue-primary);
+}

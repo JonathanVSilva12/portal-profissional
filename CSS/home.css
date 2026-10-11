@@ -1,0 +1,100 @@
+/* ===== HOME ===== */
+
+.home {
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 120px 20px 40px;
+}
+
+/* ===== MAPA ===== */
+
+.mapa-home {
+
+    position: relative;
+
+    width: 100%;
+    max-width: 1600px;
+}
+
+.mapa-home img {
+
+    width: 100%;
+
+    display: block;
+
+    border-radius: 20px;
+}
+
+/* ===== HOTSPOTS ===== */
+
+.hotspot {
+
+    position: absolute;
+
+    color: white;
+
+    cursor: pointer;
+
+    text-align: center;
+
+    text-shadow: 0 0 15px rgba(0,0,0,.8);
+
+    transition: .3s ease;
+}
+
+.hotspot:hover {
+
+    transform: scale(1.08);
+}
+
+.hotspot h2,
+.hotspot h3 {
+
+    margin: 0;
+}
+
+.hotspot span {
+
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: .9rem;
+}
+
+/* ===== POSIÇÕES ===== */
+
+.inicio {
+
+    left: 8%;
+    top: 62%;
+}
+
+.apresentacao {
+
+    left: 25%;
+    top: 42%;
+}
+
+.conhecimentos {
+
+    left: 50%;
+    top: 18%;
+}
+
+.analytics {
+
+    left: 74%;
+    top: 42%;
+}
+
+.desenvolvimento {
+
+    left: 66%;
+    top: 76%;
+}
