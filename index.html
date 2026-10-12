@@ -15,7 +15,6 @@
     <!-- Fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
@@ -27,128 +26,131 @@
 
     <header class="navbar">
 
-        <div class="logo">
-            Analista Qualidade Sistemas Sr 
-        </div>
+        <div class="logo">Analista Qualidade Sistemas Sr</div>
 
-        <nav>
-
+        <nav aria-label="Seções do portal">
             <a href="#home">Home</a>
-
-            <a href="#apresentacao">
-                Apresentação
-            </a>
-
-            <a href="#conhecimentos">
-                Conhecimentos
-            </a>
-
-            <a href="#analytics">
-                Analytics & BI
-            </a>
-
-            <a href="#desenvolvimento">
-                Desenvolvimento
-            </a>
-
+            <a href="#apresentacao">Apresentação</a>
+            <a href="#conhecimentos">Conhecimentos</a>
+            <a href="#analytics">Analytics &amp; BI</a>
+            <a href="#desenvolvimento">Desenvolvimento</a>
         </nav>
 
     </header>
 
-    <!-- ===== HOME ===== -->
+    <main>
 
-<section id="home" class="home">
+        <!-- ===== HOME ===== -->
 
-    <div class="mapa-home">
+        <section id="home" class="home">
 
-        ./IMG/mapa.png
+            <h1 class="sr-only">Jonathan Vieira da Silva - Portal Profissional</h1>
 
-        <div class="hotspot inicio">
-            <h2>Jonathan Vieira da Silva</h2>
-            <span>Portal Profissional</span>
-        </div>
+            <div class="mapa-home">
 
-        <div class="hotspot apresentacao">
-            <h3>Apresentação</h3>
-        </div>
+                <img src="./IMG/mapa.png" width="1536" height="1024"
+                    alt="Mapa ilustrado com cinco ilhas ligadas por uma trilha pontilhada">
 
-        <div class="hotspot conhecimentos">
-            <h3>Conhecimentos</h3>
-        </div>
-
-        <div class="hotspot analytics">
-            <h3>Analytics & BI</h3>
-        </div>
-
-        <div class="hotspot desenvolvimento">
-            <h3>Desenvolvimento & Automação</h3>
-        </div>
-
-    </div>
-
-    </section>
-
-        <!-- ===== MAPA DE NAVEGAÇÃO ===== -->
-
-        <div class="map-container">
-
-            <div class="node center">
-                <div>
-                    <strong>Jonathan</strong>
-                    <br>
-                    Portal Profissional
+                <!-- Título da ilha central (decorativo, o h1 está acima) -->
+                <div class="hotspot inicio" aria-hidden="true">
+                    <span class="hotspot__label">Portal Profissional</span>
                 </div>
+
+                <!--
+                    Cada ilha: link principal (pin + rótulo) e lista de tópicos.
+                    Os tópicos aparecem ao redor do pin no hover ou no foco.
+                -->
+
+                <div class="hotspot apresentacao">
+                    <a class="hotspot__pin" href="#apresentacao">
+                        <span class="hotspot__label">Apresentação</span>
+                    </a>
+                    <ul class="hotspot__topicos">
+                        <li><a href="#apresentacao-quem-sou">Quem sou</a></li>
+                        <li><a href="#apresentacao-trajetoria">Trajetória profissional</a></li>
+                    </ul>
+                </div>
+
+                <div class="hotspot conhecimentos">
+                    <a class="hotspot__pin" href="#conhecimentos">
+                        <span class="hotspot__label">Conhecimentos</span>
+                    </a>
+                    <ul class="hotspot__topicos">
+                        <li><a href="#conhecimentos-conceitos">Conceitos</a></li>
+                        <li><a href="#conhecimentos-linguagens">Linguagens</a></li>
+                    </ul>
+                </div>
+
+                <div class="hotspot analytics">
+                    <a class="hotspot__pin" href="#analytics">
+                        <span class="hotspot__label">Analytics &amp; BI</span>
+                    </a>
+                    <ul class="hotspot__topicos">
+                        <li><a href="#analytics-projetos">Projetos de analytics</a></li>
+                    </ul>
+                </div>
+
+                <div class="hotspot desenvolvimento">
+                    <a class="hotspot__pin" href="#desenvolvimento">
+                        <span class="hotspot__label">Desenvolvimento &amp; Automação</span>
+                    </a>
+                    <ul class="hotspot__topicos">
+                        <li><a href="#desenvolvimento-automacao">Automação</a></li>
+                        <li><a href="#desenvolvimento-sistemas">Desenvolvimento</a></li>
+                    </ul>
+                </div>
+
             </div>
 
-            <div class="node apresentacao">
-                Apresentação
-            </div>
+            <!-- Alternativa ao mapa em telas estreitas -->
+            <nav class="mapa-lista" aria-label="Seções do portal">
+                <p>Portal Profissional</p>
+                <a href="#apresentacao">Apresentação</a>
+                <a href="#conhecimentos">Conhecimentos</a>
+                <a href="#analytics">Analytics &amp; BI</a>
+                <a href="#desenvolvimento">Desenvolvimento &amp; Automação</a>
+            </nav>
 
-            <div class="node conhecimentos">
-                Conhecimentos
-            </div>
+        </section>
 
-            <div class="node analytics">
-                Analytics & BI
-            </div>
+        <!-- Seções abaixo ficam ocultas (hidden) até serem montadas; remover o atributo ao concluir cada uma -->
 
-            <div class="node desenvolvimento">
-                Desenvolvimento
-            </div>
+        <!-- ===== APRESENTAÇÃO ===== -->
 
-        </div>
+        <section id="apresentacao" class="secao" hidden>
+            <h2>Apresentação</h2>
+            <h3 id="apresentacao-quem-sou">Quem sou</h3>
+            <h3 id="apresentacao-trajetoria">Trajetória profissional</h3>
+        </section>
 
-    </section>
+        <!-- ===== CONHECIMENTOS ===== -->
 
-    <!-- ===== APRESENTAÇÃO ===== -->
+        <section id="conhecimentos" class="secao" hidden>
+            <h2>Conhecimentos</h2>
+            <h3 id="conhecimentos-conceitos">Conceitos</h3>
+            <h3 id="conhecimentos-linguagens">Linguagens</h3>
+        </section>
 
-    <section id="apresentacao">
+        <!-- ===== ANALYTICS & BI ===== -->
 
-    </section>
+        <section id="analytics" class="secao" hidden>
+            <h2>Analytics &amp; BI</h2>
+            <h3 id="analytics-projetos">Projetos de analytics</h3>
+        </section>
 
-    <!-- ===== CONHECIMENTOS ===== -->
+        <!-- ===== DESENVOLVIMENTO & AUTOMAÇÃO ===== -->
 
-    <section id="conhecimentos">
+        <section id="desenvolvimento" class="secao" hidden>
+            <h2>Desenvolvimento &amp; Automação</h2>
+            <h3 id="desenvolvimento-automacao">Automação</h3>
+            <h3 id="desenvolvimento-sistemas">Desenvolvimento</h3>
+        </section>
 
-    </section>
-
-    <!-- ===== ANALYTICS ===== -->
-
-    <section id="analytics">
-
-    </section>
-
-    <!-- ===== DESENVOLVIMENTO ===== -->
-
-    <section id="desenvolvimento">
-
-    </section>
+    </main>
 
     <!-- JS -->
-
     <script src="./JS/main.js"></script>
     <script src="./JS/navbar.js"></script>
-    <script src="./JS/home-map.js"></script>
 
 </body>
 

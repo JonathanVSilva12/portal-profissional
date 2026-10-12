@@ -1,100 +1,305 @@
 /* ===== HOME ===== */
 
+/* O mapa é a página: ocupa a largura toda e a navbar fica por cima dele */
 .home {
+    position: relative;
 
     min-height: 100vh;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 120px 20px 40px;
+    overflow: hidden;
 }
 
 /* ===== MAPA ===== */
 
+/*
+    Largura = largura da janela: nenhuma ilha é cortada nas laterais e a página
+    rola para mostrar o mapa inteiro. Em janelas quase quadradas o mapa cresce
+    até cobrir a altura da tela, cortando só um pouco das laterais.
+    Altura = largura / 1.5 (proporção do mapa.png), então as % dos hotspots
+    sempre batem com as ilhas.
+*/
 .mapa-home {
+    --mapa-w: max(100vw, min(150vh, 120vw));
 
     position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 
-    width: 100%;
-    max-width: 1600px;
+    width: var(--mapa-w);
+    height: calc(var(--mapa-w) / 1.5);
 }
 
 .mapa-home img {
-
     width: 100%;
+    height: 100%;
 
     display: block;
-
-    border-radius: 20px;
 }
 
 /* ===== HOTSPOTS ===== */
 
+/* Área de 44px centrada na coordenada (--x, --y) do mapa */
 .hotspot {
+    --r: clamp(70px, 7vw, 120px); /* raio dos tópicos ao redor do pin */
 
     position: absolute;
+    left: var(--x);
+    top: var(--y);
 
-    color: white;
+    width: 44px;
+    height: 44px;
+    margin: -22px 0 0 -22px;
 
-    cursor: pointer;
-
-    text-align: center;
-
-    text-shadow: 0 0 15px rgba(0,0,0,.8);
-
-    transition: .3s ease;
+    color: var(--text-primary);
 }
 
-.hotspot:hover {
-
-    transform: scale(1.08);
+.hotspot:hover,
+.hotspot:focus-within {
+    z-index: 5;
 }
 
-.hotspot h2,
-.hotspot h3 {
+/* Mantém o hover ativo no espaço entre o pin e os tópicos */
+.hotspot:hover::before,
+.hotspot:focus-within::before {
+    content: "";
 
-    margin: 0;
+    position: absolute;
+    inset: calc(var(--r) * -1.5);
+
+    border-radius: 50%;
 }
 
-.hotspot span {
-
+.hotspot__pin {
     display: block;
 
-    margin-top: 5px;
+    width: 100%;
+    height: 100%;
 
-    font-size: .9rem;
+    border: 2px solid transparent;
+    border-radius: 50%;
+
+    color: inherit;
+    text-decoration: none;
+
+    transition: border-color .2s ease, box-shadow .2s ease;
 }
 
-/* ===== POSIÇÕES ===== */
+.hotspot:hover .hotspot__pin,
+.hotspot:focus-within .hotspot__pin {
+    border-color: var(--blue-secondary);
+    box-shadow: 0 0 0 6px rgba(96, 165, 250, 0.25);
+}
+
+.hotspot__pin:focus-visible {
+    outline: 2px solid var(--text-primary);
+    outline-offset: 6px;
+}
+
+/* ===== RÓTULO ===== */
+
+.hotspot__label {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 6px 12px;
+
+    white-space: nowrap;
+    font-size: clamp(.7rem, 1.1vw, .95rem);
+    font-weight: 600;
+
+    background: rgba(15, 23, 42, 0.82);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+
+    backdrop-filter: blur(6px);
+
+    transition: border-color .2s ease, background .2s ease;
+}
+
+.hotspot:hover .hotspot__label,
+.hotspot:focus-within .hotspot__label {
+    background: rgba(30, 41, 59, 0.95);
+    border-color: var(--blue-secondary);
+}
+
+/* Título da ilha central: texto, sem clique */
+.inicio {
+    pointer-events: none;
+}
+
+.inicio .hotspot__label {
+    font-size: clamp(.9rem, 1.6vw, 1.3rem);
+    letter-spacing: .3px;
+}
+
+/* ===== TÓPICOS AO REDOR ===== */
+
+.hotspot__topicos {
+    list-style: none;
+}
+
+/* Parados no centro do pin, escondidos */
+.hotspot__topicos li {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translate(-50%, -50%);
+
+    transition: opacity .2s ease, transform .25s ease, visibility .2s;
+}
+
+/* Ângulo de cada tópico: 225deg = acima à esquerda, 315deg = acima à direita */
+.hotspot__topicos li:nth-child(1) { --a: 225deg; }
+.hotspot__topicos li:nth-child(2) { --a: 315deg; }
+.hotspot__topicos li:only-child  { --a: 270deg; }
+
+.hotspot:hover .hotspot__topicos li,
+.hotspot:focus-within .hotspot__topicos li {
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translate(-50%, -50%)
+        translate(calc(cos(var(--a)) * var(--r)), calc(sin(var(--a)) * var(--r)));
+}
+
+.hotspot__topicos a {
+    display: block;
+
+    padding: 7px 14px;
+
+    white-space: nowrap;
+    font-size: clamp(.7rem, 1vw, .9rem);
+    font-weight: 500;
+    color: var(--text-primary);
+    text-decoration: none;
+
+    background: var(--bg-card);
+    border: 1px solid var(--blue-primary);
+    border-radius: 999px;
+
+    transition: background .2s ease;
+}
+
+.hotspot__topicos a:hover,
+.hotspot__topicos a:focus-visible {
+    background: var(--blue-primary);
+}
+
+.hotspot__topicos a:focus-visible {
+    outline: 2px solid var(--text-primary);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hotspot__topicos li {
+        transition: none;
+    }
+}
+
+/* Ilha do topo: tópicos para os lados, para não ficarem sob a navbar */
+.conhecimentos .hotspot__topicos li:nth-child(1) { --a: 180deg; }
+.conhecimentos .hotspot__topicos li:nth-child(2) { --a: 0deg; }
+
+/* ===== POSIÇÕES (centro de cada marcador no mapa.png) ===== */
 
 .inicio {
-
-    left: 8%;
-    top: 62%;
+    --x: 49.8%;
+    --y: 41.6%;
 }
 
 .apresentacao {
-
-    left: 25%;
-    top: 42%;
+    --x: 18.8%;
+    --y: 38.6%;
 }
 
 .conhecimentos {
-
-    left: 50%;
-    top: 18%;
+    --x: 52.2%;
+    --y: 10.6%;
 }
 
 .analytics {
-
-    left: 74%;
-    top: 42%;
+    --x: 76.7%;
+    --y: 33.2%;
 }
 
 .desenvolvimento {
+    --x: 72.1%;
+    --y: 68.2%;
+}
 
-    left: 66%;
-    top: 76%;
+/* ===== LISTA (TELAS ESTREITAS) ===== */
+
+.mapa-lista {
+    display: none;
+}
+
+/* Celular e telas em pé: mapa no topo e lista de links abaixo */
+@media (max-width: 700px), (max-aspect-ratio: 1/1) {
+
+    .home {
+        height: auto;
+        min-height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+
+        padding: calc(var(--navbar-h) + 16px) 20px 24px;
+    }
+
+    .mapa-home {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+
+        width: 100%;
+        height: auto;
+    }
+
+    .mapa-home img {
+        height: auto;
+        border-radius: 20px;
+    }
+
+    .hotspot__label,
+    .hotspot__topicos,
+    .inicio {
+        display: none;
+    }
+
+    .mapa-lista {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        width: 100%;
+        max-width: 480px;
+    }
+
+    .mapa-lista p {
+        font-size: 1.15rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .mapa-lista a {
+        padding: 14px 16px;
+
+        color: var(--text-primary);
+        text-decoration: none;
+
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+    }
 }

@@ -20,6 +20,9 @@
     --text-secondary: #94a3b8;
 
     --border-color: rgba(59, 130, 246, 0.25);
+
+    /* Altura da navbar, usada nos cálculos de layout */
+    --navbar-h: 75px;
 }
 
 /* ===== BASE ===== */
@@ -30,12 +33,38 @@ html {
 
 body {
 
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
 
     background: var(--bg-primary);
     color: var(--text-primary);
 
     overflow-x: hidden;
+}
+
+/* Texto só para leitores de tela */
+.sr-only {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ===== SEÇÕES ===== */
+
+.secao {
+    min-height: 100vh;
+
+    padding: calc(var(--navbar-h) + 24px) 60px 60px;
 }
 
 /* ===== NAVBAR ===== */
@@ -54,15 +83,17 @@ body {
 
     padding: 20px 60px;
 
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(8px);
 
-    background: rgba(15, 23, 42, 0.90);
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(15, 23, 42, 0.55);
 
     z-index: 999;
 
     transition: transform .3s ease;
+}
+
+.navbar--hidden {
+    transform: translateY(-100%);
 }
 
 .logo {
@@ -83,7 +114,7 @@ body {
 
     text-decoration: none;
 
-    color: var(--text-secondary);
+    color: #cbd5e1;
 
     transition: .3s ease;
 }
@@ -91,4 +122,40 @@ body {
 .navbar nav a:hover {
 
     color: var(--blue-primary);
+}
+
+.navbar nav a:focus-visible {
+
+    outline: 2px solid var(--blue-secondary);
+    outline-offset: 4px;
+}
+
+/* ===== RESPONSIVO ===== */
+
+@media (max-width: 900px) {
+
+    :root {
+        --navbar-h: 92px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+
+        padding: 12px 16px;
+    }
+
+    .navbar nav {
+        width: 100%;
+        gap: 18px;
+
+        overflow-x: auto;
+        white-space: nowrap;
+        font-size: .9rem;
+    }
+
+    .secao {
+        padding: calc(var(--navbar-h) + 24px) 20px 40px;
+    }
 }
