@@ -21,8 +21,15 @@
 
     --border-color: rgba(59, 130, 246, 0.25);
 
+    /* Dourado dos marcadores do mapa */
+    --gold: #fde68a;
+    --gold-glow: rgba(251, 191, 36, 0.45);
+
     /* Altura da navbar, usada nos cálculos de layout */
     --navbar-h: 75px;
+
+    --mono: ui-monospace, "SF Mono", Consolas, "Liberation Mono", monospace;
+    --serif: 'Cormorant Garamond', Georgia, serif;
 }
 
 /* ===== BASE ===== */
@@ -65,6 +72,58 @@ body {
     min-height: 100vh;
 
     padding: calc(var(--navbar-h) + 24px) 60px 60px;
+}
+
+/* ===== PÁGINAS INTERNAS ===== */
+
+.pagina {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    padding: calc(var(--navbar-h) + 48px) 24px 96px;
+}
+
+/* Âncoras (ex.: #conceitos) não ficam sob a navbar */
+.pagina [id] {
+    scroll-margin-top: calc(var(--navbar-h) + 16px);
+}
+
+.pagina h1,
+.pagina h2 {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.pagina__titulo {
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+}
+
+.pagina section + section {
+    margin-top: 72px;
+}
+
+/* ===== TAGS ===== */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 16px;
+    list-style: none;
+}
+
+.tags li {
+    padding: 4px 12px;
+
+    font-size: .8rem;
+    font-weight: 500;
+
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
 }
 
 /* ===== NAVBAR ===== */
@@ -124,6 +183,11 @@ body {
     color: var(--blue-primary);
 }
 
+.navbar nav a[aria-current="page"] {
+
+    color: var(--text-primary);
+}
+
 .navbar nav a:focus-visible {
 
     outline: 2px solid var(--blue-secondary);
@@ -155,7 +219,7 @@ body {
         font-size: .9rem;
     }
 
-    .secao {
-        padding: calc(var(--navbar-h) + 24px) 20px 40px;
+    .pagina {
+        padding: calc(var(--navbar-h) + 32px) 20px 72px;
     }
 }

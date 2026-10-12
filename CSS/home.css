@@ -64,7 +64,7 @@
     content: "";
 
     position: absolute;
-    inset: calc(var(--r) * -1.5);
+    inset: calc(var(--r) * -1.9);
 
     border-radius: 50%;
 }
@@ -204,9 +204,13 @@
     }
 }
 
-/* Ilha do topo: tópicos para os lados, para não ficarem sob a navbar */
+/* Ilha do topo: tópicos para os lados e o terceiro abaixo do rótulo, longe da navbar */
 .conhecimentos .hotspot__topicos li:nth-child(1) { --a: 180deg; }
 .conhecimentos .hotspot__topicos li:nth-child(2) { --a: 0deg; }
+.conhecimentos .hotspot__topicos li:nth-child(3) {
+    --a: 90deg;
+    --r: clamp(112px, 11.2vw, 190px);
+}
 
 /* ===== POSIÇÕES (centro de cada marcador no mapa.png) ===== */
 

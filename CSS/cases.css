@@ -1,0 +1,267 @@
+/* ===== CASES (ANALYTICS E DESENVOLVIMENTO) ===== */
+
+.secao__intro {
+    margin-top: 8px;
+
+    color: var(--text-secondary);
+}
+
+.case {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 32px;
+
+    margin-top: 28px;
+    padding: 24px;
+
+    background: rgba(30, 41, 59, 0.55);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+}
+
+/* ===== MÍDIA (IMAGEM OU VÍDEO) ===== */
+
+.case__midia {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.case__midia video {
+    aspect-ratio: 16 / 9;
+
+    background: #0b1220;
+}
+
+.midia__rotulo {
+    margin-top: 6px;
+
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--gold);
+}
+
+.case__midia img,
+.case__midia video {
+    display: block;
+    width: 100%;
+
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+/* Espaço reservado até a imagem ou o vídeo real ser colocado */
+.vazio {
+    display: grid;
+    place-items: center;
+
+    aspect-ratio: 16 / 9;
+    padding: 16px;
+
+    font-size: .9rem;
+    text-align: center;
+    color: var(--text-secondary);
+
+    border: 1px dashed var(--border-color);
+    border-radius: 12px;
+}
+
+.vazio code {
+    font-family: var(--mono);
+    font-size: .8rem;
+}
+
+/* ===== TEXTO ===== */
+
+.case__linha {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+}
+
+.case__linha code {
+    font-family: var(--mono);
+    font-size: .85rem;
+    color: var(--text-secondary);
+}
+
+.case h3 {
+    margin-top: 12px;
+
+    font-size: 1.4rem;
+}
+
+.case__blocos {
+    display: grid;
+    gap: 14px;
+
+    margin-top: 16px;
+}
+
+.case__blocos dt {
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--gold);
+}
+
+.case__blocos dd {
+    margin-top: 2px;
+
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.case .tags {
+    margin-top: 18px;
+}
+
+/* ===== PILHA DE IMAGENS ===== */
+
+/* A imagem de cima é a de --pos 0; as outras ficam atrás, deslocadas e inclinadas */
+.pilha {
+    position: relative;
+
+    aspect-ratio: 16 / 11;
+
+    cursor: pointer;
+}
+
+.pilha:focus-visible {
+    outline: 2px solid var(--blue-secondary);
+    outline-offset: 6px;
+    border-radius: 14px;
+}
+
+.pilha__item {
+    position: absolute;
+    inset: 0 34px 30px 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    padding: 10px;
+
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+    transform-origin: bottom left;
+    /* A partir da terceira imagem a posição não muda, para a pilha não crescer */
+    transform:
+        translate(calc(min(var(--pos, 0), 2) * 17px), calc(min(var(--pos, 0), 2) * 15px))
+        rotate(calc(min(var(--pos, 0), 2) * 3.5deg));
+    z-index: calc(10 - var(--pos, 0));
+
+    transition: transform .35s ease;
+}
+
+.pilha__item img,
+.pilha__item .vazio {
+    flex: 1;
+
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: auto;
+
+    object-fit: cover;
+
+    border: 0;
+    border-radius: 8px;
+}
+
+.pilha__item .vazio {
+    border: 1px dashed var(--border-color);
+}
+
+/* Enquanto o arquivo não existe, o texto alternativo aparece dentro do quadro */
+.pilha__item img {
+    font-size: .85rem;
+    text-align: center;
+    color: var(--text-secondary);
+
+    background: rgba(15, 23, 42, 0.6);
+}
+
+.pilha__item figcaption {
+    font-size: .8rem;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.pilha__dica {
+    font-size: .8rem;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .pilha__item {
+        transition: none;
+    }
+}
+
+/* ===== GANHOS (ANTES E DEPOIS) ===== */
+
+.case__andamento {
+    margin-top: 16px;
+
+    font-size: .9rem;
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+
+.ganhos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+
+    margin-top: 18px;
+}
+
+.ganho {
+    padding: 14px 16px;
+
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.ganho__nome {
+    font-size: .8rem;
+    color: var(--text-secondary);
+}
+
+.ganho__valores {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+
+    margin-top: 6px;
+}
+
+.antes {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.ganho__seta {
+    color: var(--text-secondary);
+}
+
+.depois {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+@media (max-width: 900px) {
+
+    .case {
+        grid-template-columns: 1fr;
+    }
+}

@@ -15,7 +15,7 @@
     <!-- Fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap"
         rel="stylesheet">
 
 </head>
@@ -29,11 +29,11 @@
         <div class="logo">Analista Qualidade Sistemas Sr</div>
 
         <nav aria-label="Seções do portal">
-            <a href="#home">Home</a>
-            <a href="#apresentacao">Apresentação</a>
-            <a href="#conhecimentos">Conhecimentos</a>
-            <a href="#analytics">Analytics &amp; BI</a>
-            <a href="#desenvolvimento">Desenvolvimento</a>
+            <a href="#home" aria-current="page">Home</a>
+            <a href="apresentacao.html">Apresentação</a>
+            <a href="conhecimentos.html">Conhecimentos</a>
+            <a href="analytics.html">Analytics &amp; BI</a>
+            <a href="desenvolvimento.html">Desenvolvimento &amp; Automação</a>
         </nav>
 
     </header>
@@ -62,41 +62,41 @@
                 -->
 
                 <div class="hotspot apresentacao">
-                    <a class="hotspot__pin" href="#apresentacao">
+                    <a class="hotspot__pin" href="apresentacao.html">
                         <span class="hotspot__label">Apresentação</span>
                     </a>
                     <ul class="hotspot__topicos">
-                        <li><a href="#apresentacao-quem-sou">Quem sou</a></li>
-                        <li><a href="#apresentacao-trajetoria">Trajetória profissional</a></li>
+                        <li><a href="apresentacao.html#quem-sou">Quem sou</a></li>
+                        <li><a href="apresentacao.html#trajetoria">Trajetória profissional</a></li>
                     </ul>
                 </div>
 
                 <div class="hotspot conhecimentos">
-                    <a class="hotspot__pin" href="#conhecimentos">
+                    <a class="hotspot__pin" href="conhecimentos.html">
                         <span class="hotspot__label">Conhecimentos</span>
                     </a>
                     <ul class="hotspot__topicos">
-                        <li><a href="#conhecimentos-conceitos">Conceitos</a></li>
-                        <li><a href="#conhecimentos-linguagens">Linguagens</a></li>
+                        <li><a href="conhecimentos.html#analytics">Analytics</a></li>
+                        <li><a href="conhecimentos.html#desenvolvimento">Desenvolvimento</a></li>
+                        <li><a href="conhecimentos.html#devops">DevOps</a></li>
                     </ul>
                 </div>
 
                 <div class="hotspot analytics">
-                    <a class="hotspot__pin" href="#analytics">
+                    <a class="hotspot__pin" href="analytics.html">
                         <span class="hotspot__label">Analytics &amp; BI</span>
                     </a>
                     <ul class="hotspot__topicos">
-                        <li><a href="#analytics-projetos">Projetos de analytics</a></li>
+                        <li><a href="analytics.html#projetos">Projetos de analytics</a></li>
                     </ul>
                 </div>
 
                 <div class="hotspot desenvolvimento">
-                    <a class="hotspot__pin" href="#desenvolvimento">
+                    <a class="hotspot__pin" href="desenvolvimento.html">
                         <span class="hotspot__label">Desenvolvimento &amp; Automação</span>
                     </a>
                     <ul class="hotspot__topicos">
-                        <li><a href="#desenvolvimento-automacao">Automação</a></li>
-                        <li><a href="#desenvolvimento-sistemas">Desenvolvimento</a></li>
+                        <li><a href="desenvolvimento.html#automacao">Automação e IA</a></li>
                     </ul>
                 </div>
 
@@ -105,45 +105,12 @@
             <!-- Alternativa ao mapa em telas estreitas -->
             <nav class="mapa-lista" aria-label="Seções do portal">
                 <p>Portal Profissional</p>
-                <a href="#apresentacao">Apresentação</a>
-                <a href="#conhecimentos">Conhecimentos</a>
-                <a href="#analytics">Analytics &amp; BI</a>
-                <a href="#desenvolvimento">Desenvolvimento &amp; Automação</a>
+                <a href="apresentacao.html">Apresentação</a>
+                <a href="conhecimentos.html">Conhecimentos</a>
+                <a href="analytics.html">Analytics &amp; BI</a>
+                <a href="desenvolvimento.html">Desenvolvimento &amp; Automação</a>
             </nav>
 
-        </section>
-
-        <!-- Seções abaixo ficam ocultas (hidden) até serem montadas; remover o atributo ao concluir cada uma -->
-
-        <!-- ===== APRESENTAÇÃO ===== -->
-
-        <section id="apresentacao" class="secao" hidden>
-            <h2>Apresentação</h2>
-            <h3 id="apresentacao-quem-sou">Quem sou</h3>
-            <h3 id="apresentacao-trajetoria">Trajetória profissional</h3>
-        </section>
-
-        <!-- ===== CONHECIMENTOS ===== -->
-
-        <section id="conhecimentos" class="secao" hidden>
-            <h2>Conhecimentos</h2>
-            <h3 id="conhecimentos-conceitos">Conceitos</h3>
-            <h3 id="conhecimentos-linguagens">Linguagens</h3>
-        </section>
-
-        <!-- ===== ANALYTICS & BI ===== -->
-
-        <section id="analytics" class="secao" hidden>
-            <h2>Analytics &amp; BI</h2>
-            <h3 id="analytics-projetos">Projetos de analytics</h3>
-        </section>
-
-        <!-- ===== DESENVOLVIMENTO & AUTOMAÇÃO ===== -->
-
-        <section id="desenvolvimento" class="secao" hidden>
-            <h2>Desenvolvimento &amp; Automação</h2>
-            <h3 id="desenvolvimento-automacao">Automação</h3>
-            <h3 id="desenvolvimento-sistemas">Desenvolvimento</h3>
         </section>
 
     </main>

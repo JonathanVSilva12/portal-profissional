@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Desenvolvimento &amp; Automação | Jonathan Vieira da Silva</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./CSS/main.css">
+    <link rel="stylesheet" href="./CSS/cases.css">
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+
+    <header class="navbar">
+
+        <div class="logo">Analista Qualidade Sistemas Sr</div>
+
+        <nav aria-label="Seções do portal">
+            <a href="index.html">Home</a>
+            <a href="apresentacao.html">Apresentação</a>
+            <a href="conhecimentos.html">Conhecimentos</a>
+            <a href="analytics.html">Analytics &amp; BI</a>
+            <a href="desenvolvimento.html" aria-current="page">Desenvolvimento &amp; Automação</a>
+        </nav>
+
+    </header>
+
+    <main class="pagina">
+
+        <h1 class="pagina__titulo">Desenvolvimento &amp; Automação</h1>
+
+        <section id="automacao">
+
+            <h2>Automação e IA</h2>
+            <p class="secao__intro">Aplicações que reduzem o trabalho manual da operação.</p>
+
+            <!-- ============================================================
+                 CASE: para criar outro, copie o bloco article inteiro e cole abaixo
+                 ============================================================ -->
+            <article class="case" id="sistemas">
+
+                <div class="case__midia">
+
+                    <!--
+                        FOTOS: pilha de imagens. A primeira da lista fica por cima;
+                        o clique na pilha troca a de cima.
+
+                        COMO TROCAR: basta salvar a imagem em IMG/cases/ com o MESMO NOME
+                        indicado no comentário de cada foto. Não precisa mexer no HTML.
+                        Para trocar o nome do arquivo, altere o src do img correspondente.
+                        A legenda fica em figcaption e a descrição para leitores de tela no alt.
+
+                        Antes de usar: cubra nomes, telefones, números de protocolo e qualquer
+                        dado de cliente que apareça nas telas.
+                    -->
+                    <div class="pilha" role="button" tabindex="0"
+                        aria-label="Alternar entre as imagens do projeto">
+
+                        <!-- FOTO 1 (por cima): tela do aplicativo. Arquivo: IMG/cases/escuta-01.png -->
+                        <figure class="pilha__item">
+                            <img src="./IMG/cases/escuta-01.png" alt="[Tela do aplicativo de escuta de ligações]">
+                            <figcaption>Tela do aplicativo</figcaption>
+                        </figure>
+
+                        <!-- FOTO 2: transcrição e resumo gerados. Arquivo: IMG/cases/escuta-02.png -->
+                        <figure class="pilha__item">
+                            <img src="./IMG/cases/escuta-02.png" alt="[Transcrição e resumo gerados pelo aplicativo]">
+                            <figcaption>Transcrição e resumo gerados</figcaption>
+                        </figure>
+
+                    </div>
+
+                    <p class="pilha__dica">Clique nas imagens para alternar</p>
+
+                    <!--
+                        VÍDEO: salve a demonstração em VIDEO/escuta-demo.mp4 (mesmo nome).
+                        O player já está pronto; enquanto o arquivo não existir ele aparece vazio.
+                        Para uma capa (opcional), adicione poster="./IMG/cases/escuta-capa.png" na tag video.
+                    -->
+                    <p class="midia__rotulo">Demonstração</p>
+
+                    <video controls preload="metadata">
+                        <source src="./VIDEO/escuta-demo.mp4" type="video/mp4">
+                    </video>
+
+                </div>
+
+                <div class="case__texto">
+
+                    <p class="case__linha">
+                        <span class="metodo">GET</span>
+                        <code>/desenvolvimento/cases/escuta-de-ligacoes</code>
+                    </p>
+
+                    <h3>Escuta de ligações com transcrição e resumo</h3>
+
+                    <dl class="case__blocos">
+                        <div>
+                            <dt>Problema</dt>
+                            <dd>
+                                A análise de cada ligação exigia escutar a gravação, de 5 a 7 minutos, e
+                                consumia em média de 20 a 30 minutos por caso, entre a escuta e o resumo
+                                com os insights da ligação.
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>Solução</dt>
+                            <dd>
+                                Um aplicativo que transcreve um áudio de 5 a 7 minutos em 1 a 2 minutos e
+                                entrega ao analista a transcrição da chamada. Com o texto em mãos, o
+                                analista pode levá-lo a uma ferramenta de IA ou resumir com mais rapidez,
+                                sem precisar reescutar a ligação para conferir se o resumo faz sentido. O
+                                processo executa várias gravações de uma vez e devolve cada arquivo
+                                separado, com a sua transcrição.
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>Resultado</dt>
+                            <dd>
+                                O tempo médio por caso caiu de 20 a 30 minutos para cerca de 5 minutos por
+                                escuta, liberando o analista para outras demandas.
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <div class="ganhos">
+
+                        <div class="ganho">
+                            <p class="ganho__nome">Tempo médio por caso</p>
+                            <p class="ganho__valores">
+                                <span class="antes">20 a 30 min</span>
+                                <span class="ganho__seta" aria-hidden="true">→</span>
+                                <span class="depois">5 min</span>
+                            </p>
+                        </div>
+
+                        <div class="ganho">
+                            <p class="ganho__nome">Transcrição de um áudio de 5 a 7 min</p>
+                            <p class="ganho__valores">
+                                <span class="depois">1 a 2 min</span>
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <ul class="tags">
+                        <li>Python</li>
+                        <li>tkinter</li>
+                        <li>speech_recognition</li>
+                        <li>wave</li>
+                    </ul>
+
+                </div>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- JS -->
+    <script src="./JS/main.js"></script>
+    <script src="./JS/navbar.js"></script>
+    <script src="./JS/pilha.js"></script>
+
+</body>
+
+</html>

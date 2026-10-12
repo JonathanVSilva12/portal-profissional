@@ -1,0 +1,88 @@
+/* ===== PÁGINA: CONHECIMENTOS ===== */
+
+.legenda {
+    margin-top: 12px;
+
+    color: var(--text-secondary);
+}
+
+.area h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+}
+
+.area__intro {
+    margin-top: 8px;
+
+    color: var(--text-secondary);
+}
+
+/* ===== CARTÕES ===== */
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 16px;
+
+    margin-top: 28px;
+    list-style: none;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 20px;
+
+    background: rgba(30, 41, 59, 0.55);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+}
+
+.skill h3 {
+    font-size: 1.15rem;
+}
+
+.skill p {
+    font-size: .95rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+}
+
+.skill .tags {
+    margin-top: 0;
+}
+
+/* ===== NÍVEL ===== */
+
+.nivel {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-top: auto;
+    padding-top: 6px;
+
+    font-size: .85rem;
+    color: var(--text-secondary);
+}
+
+.nivel i {
+    width: 10px;
+    height: 10px;
+
+    border: 1px solid var(--text-secondary);
+    border-radius: 50%;
+}
+
+.nivel span {
+    margin-left: 6px;
+}
+
+.nivel--1 i:nth-child(-n+1),
+.nivel--2 i:nth-child(-n+2),
+.nivel--3 i {
+    background: var(--gold);
+    border-color: var(--gold);
+    box-shadow: 0 0 8px var(--gold-glow);
+}

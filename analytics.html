@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Analytics &amp; BI | Jonathan Vieira da Silva</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./CSS/main.css">
+    <link rel="stylesheet" href="./CSS/cases.css">
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+
+    <header class="navbar">
+
+        <div class="logo">Analista Qualidade Sistemas Sr</div>
+
+        <nav aria-label="Seções do portal">
+            <a href="index.html">Home</a>
+            <a href="apresentacao.html">Apresentação</a>
+            <a href="conhecimentos.html">Conhecimentos</a>
+            <a href="analytics.html" aria-current="page">Analytics &amp; BI</a>
+            <a href="desenvolvimento.html">Desenvolvimento &amp; Automação</a>
+        </nav>
+
+    </header>
+
+    <main class="pagina">
+
+        <h1 class="pagina__titulo">Analytics &amp; BI</h1>
+
+        <section id="projetos">
+
+            <h2>Projetos de analytics</h2>
+            <p class="secao__intro">Análises e automações sobre os indicadores da operação.</p>
+
+            <!-- ============================================================
+                 CASE: para criar outro, copie o bloco article inteiro e cole abaixo
+                 ============================================================ -->
+            <article class="case">
+
+                <div class="case__midia">
+
+                    <!--
+                        FOTOS: pilha de imagens. A primeira da lista fica por cima;
+                        o clique na pilha troca a de cima.
+
+                        COMO TROCAR UMA FOTO:
+                        1. Salve a imagem em IMG/cases/ com o nome indicado no bloco.
+                        2. Apague o bloco div class="vazio" daquela foto.
+                        3. Coloque no lugar: img src="./IMG/cases/NOME.png" alt="descrição"
+                           (como tag HTML completa, com os sinais de menor e maior).
+
+                        Para mais fotos, copie um figure inteiro; para menos, apague um. A legenda fica em figcaption.
+                        Antes de usar: borre nomes de clientes, números de OS e dados sensíveis.
+                    -->
+                    <div class="pilha" role="button" tabindex="0"
+                        aria-label="Alternar entre as imagens do projeto">
+
+                        <!-- FOTO 1 (por cima): gráficos de acompanhamento. Arquivo: IMG/cases/sobras-graficos.png -->
+                        <figure class="pilha__item">
+                            <div class="vazio">
+                                <span>[Gráficos de acompanhamento]<br><code>IMG/cases/sobras-graficos.png</code></span>
+                            </div>
+                            <figcaption>Gráficos de acompanhamento</figcaption>
+                        </figure>
+
+                        <!-- FOTO 2: código do estudo. Arquivo: IMG/cases/sobras-codigo.png -->
+                        <figure class="pilha__item">
+                            <div class="vazio">
+                                <span>[Código do estudo]<br><code>IMG/cases/sobras-codigo.png</code></span>
+                            </div>
+                            <figcaption>Código do estudo</figcaption>
+                        </figure>
+
+                        <!-- FOTO 3: e-mail automático de cobrança. Arquivo: IMG/cases/sobras-email.png -->
+                        <figure class="pilha__item">
+                            <div class="vazio">
+                                <span>[E-mail automático]<br><code>IMG/cases/sobras-email.png</code></span>
+                            </div>
+                            <figcaption>E-mail automático de cobrança</figcaption>
+                        </figure>
+
+                        <!-- FOTO 4: hierarquia de cobrança ou tabela de ofensores. Arquivo: IMG/cases/sobras-hierarquia.png -->
+                        <figure class="pilha__item">
+                            <div class="vazio">
+                                <span>[Hierarquia ou ofensores]<br><code>IMG/cases/sobras-hierarquia.png</code></span>
+                            </div>
+                            <figcaption>Hierarquia de cobrança</figcaption>
+                        </figure>
+
+                    </div>
+
+                    <p class="pilha__dica">Clique nas imagens para alternar</p>
+
+                    <!--
+                        VÍDEO (opcional): salve em VIDEO/sobras-demo.mp4 e apague as duas linhas
+                        de comentário que envolvem o bloco abaixo.
+                    -->
+                    <!--
+                    <video controls preload="metadata">
+                        <source src="./VIDEO/sobras-demo.mp4" type="video/mp4">
+                    </video>
+                    -->
+
+                </div>
+
+                <div class="case__texto">
+
+                    <p class="case__linha">
+                        <span class="metodo">GET</span>
+                        <code>/analytics/cases/sobra-de-ordens</code>
+                    </p>
+
+                    <h3>Sobra de ordens de serviço</h3>
+
+                    <dl class="case__blocos">
+                        <div>
+                            <dt>Problema</dt>
+                            <dd>
+                                A sobra de ordens de serviço (OS) tinha volumetria alta, e muitas ordens
+                                sobravam mais de uma vez, as chamadas resobras. Era preciso identificar os
+                                maiores ofensores e saber quantas vezes cada ordem já tinha deixado de ser
+                                atendida.
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>Solução</dt>
+                            <dd>
+                                Um estudo de levantamento, em código, que verifica ordem por ordem quantas
+                                vezes o cliente deixou de ser atendido e define quem deve receber cada
+                                ordem. Criei uma hierarquia de cobrança, até o nível de diretor, para tratar
+                                o não atendimento. O acompanhamento foi apresentado em gráficos, e o envio
+                                dos e-mails, antes manual, passou a ser automático, com uma versão em
+                                Python e outra direto no banco de dados, por procedures.
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>Resultado</dt>
+                            <dd>A média de sobras caiu de 6% para 3 a 4%, e as ordens com resobras, que chegavam a 6 ou 7 ocorrências, passaram a ter no máximo 2 ou 3.</dd>
+                        </div>
+                    </dl>
+
+                    <div class="ganhos">
+
+                        <div class="ganho">
+                            <p class="ganho__nome">Sobras (média)</p>
+                            <p class="ganho__valores">
+                                <span class="antes">6%</span>
+                                <span class="ganho__seta" aria-hidden="true">→</span>
+                                <span class="depois">3 a 4%</span>
+                            </p>
+                        </div>
+
+                        <div class="ganho">
+                            <p class="ganho__nome">Resobras por ordem (máximo)</p>
+                            <p class="ganho__valores">
+                                <span class="antes">6 a 7x</span>
+                                <span class="ganho__seta" aria-hidden="true">→</span>
+                                <span class="depois">2 a 3x</span>
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <p class="case__andamento">Em andamento: versão em Power BI para acompanhar esses indicadores de forma contínua.</p>
+
+                    <ul class="tags">
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>Procedures</li>
+                    </ul>
+
+                </div>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- JS -->
+    <script src="./JS/main.js"></script>
+    <script src="./JS/navbar.js"></script>
+    <script src="./JS/pilha.js"></script>
+
+</body>
+
+</html>

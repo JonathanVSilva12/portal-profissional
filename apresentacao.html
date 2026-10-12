@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Apresentação | Jonathan Vieira da Silva</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./CSS/main.css">
+    <link rel="stylesheet" href="./CSS/apresentacao.css">
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+
+    <header class="navbar">
+
+        <div class="logo">Analista Qualidade Sistemas Sr</div>
+
+        <nav aria-label="Seções do portal">
+            <a href="index.html">Home</a>
+            <a href="apresentacao.html" aria-current="page">Apresentação</a>
+            <a href="conhecimentos.html">Conhecimentos</a>
+            <a href="analytics.html">Analytics &amp; BI</a>
+            <a href="desenvolvimento.html">Desenvolvimento &amp; Automação</a>
+        </nav>
+
+    </header>
+
+    <main class="pagina">
+
+        <h1 class="pagina__titulo">Quem sou eu</h1>
+
+        <!-- ===== PERFIL ===== -->
+
+        <section id="quem-sou" class="perfil">
+
+            <div class="foto">
+                <img src="./IMG/Foto_perfil.jpg" alt="Jonathan Vieira da Silva">
+            </div>
+
+            <div>
+
+                <h2 class="perfil__nome">Jonathan Vieira da Silva</h2>
+                <p class="perfil__cargo">Analista Suporte Operação Sr, Vivo (Telefônica)</p>
+
+                <!-- Cada dado é apresentado como uma chamada de API: método, caminho e resposta -->
+                <ul class="endpoints">
+
+                    <li>
+                        <span class="metodo">GET</span>
+                        <code>/idade</code>
+                        <span class="resposta">35 anos</span>
+                    </li>
+
+                    <li>
+                        <span class="metodo">GET</span>
+                        <code>/hobbies</code>
+                        <span class="resposta">Correr, futebol, games, viajar e família</span>
+                    </li>
+
+                    <li>
+                        <span class="metodo">GET</span>
+                        <code>/familia</code>
+                        <span class="resposta">1 filha</span>
+                    </li>
+
+                    <li>
+                        <span class="metodo">GET</span>
+                        <code>/experiencia/vivo</code>
+                        <span class="resposta">10 anos de Telefônica</span>
+                    </li>
+
+                    <li>
+                        <span class="metodo">GET</span>
+                        <code>/formacao</code>
+                        <span class="resposta">Gestão da TI, com MBA em TI (Analytics, Big Data e Intelligent Information)</span>
+                    </li>
+
+                    <li>
+                        <span class="metodo">GET</span>
+                        <code>/idiomas/ingles</code>
+                        <span class="resposta">Leitura: básica a intermediária. Escuta: básica.</span>
+                    </li>
+
+                    <li>
+                        <span class="metodo">GET</span>
+                        <code>/idiomas/espanhol</code>
+                        <span class="resposta">Leitura: intermediária. Escuta: básica.</span>
+                    </li>
+
+                    <li>
+                        <span class="metodo">GET</span>
+                        <code>/experiencia/analytics</code>
+                        <span class="resposta">Mais de 5 anos com data analytics: estudos de caso, dashboards e BI</span>
+                    </li>
+
+                    <li>
+                        <span class="metodo">GET</span>
+                        <code>/experiencia/automacao</code>
+                        <span class="resposta">Mais de 3 anos desenvolvendo automações e aplicações</span>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+        <!-- ===== RESUMO ===== -->
+
+        <section class="resumo">
+
+            <h2>Resumo</h2>
+
+            <p>
+                Analista de dados e automação, com 10 anos de Vivo. Comecei no agendamento de
+                ordens de serviço e evoluí para a análise de dados: relatórios, dashboards em
+                Power BI e estudos que apoiam a tomada de decisão. Hoje desenvolvo automações e
+                aplicações internas com Python, SQL e VBA, e também administro banco de dados.
+            </p>
+
+        </section>
+
+        <!-- ===== TRAJETÓRIA ===== -->
+
+        <section id="trajetoria" class="trajetoria">
+
+            <h2>Trajetória na Vivo</h2>
+            <p class="intro">Dez anos na mesma empresa, do atendimento ao dado.</p>
+
+            <!--
+                Um <li> por cargo, do mais antigo ao atual.
+                Para usar foto no lugar do ícone: trocar o <svg> por <img src="./IMG/etapas/arquivo.jpg" alt="">
+            -->
+            <ol class="etapas">
+
+                <li class="etapa">
+                    <div class="etapa__corpo">
+
+                        <div class="etapa__midia">
+                            <svg class="icone" viewBox="0 0 64 64" aria-hidden="true">
+                                <path d="M14 36v-6a18 18 0 0 1 36 0v6" />
+                                <rect x="10" y="34" width="8" height="14" rx="3" />
+                                <rect x="46" y="34" width="8" height="14" rx="3" />
+                                <path d="M50 48c0 6-6 8-14 8" />
+                                <circle cx="34" cy="56" r="2" />
+                            </svg>
+                        </div>
+
+                        <div>
+                            <p class="etapa__linha">
+                                <span class="metodo">GET</span>
+                                <code>/vivo/carreira/atendente-agendamento</code>
+                                <span class="etapa__periodo">[período]</span>
+                            </p>
+                            <h3>Atendente de Agendamento</h3>
+                            <p class="etapa__texto">
+                                Agendamento e confirmação da agenda das ordens de serviço.
+                            </p>
+                        </div>
+
+                    </div>
+                </li>
+
+                <li class="etapa">
+                    <div class="etapa__corpo">
+
+                        <div class="etapa__midia">
+                            <svg class="icone" viewBox="0 0 64 64" aria-hidden="true">
+                                <rect x="10" y="12" width="44" height="40" rx="4" />
+                                <path d="M10 26h44M10 38h44M26 12v40M40 12v40" />
+                            </svg>
+                        </div>
+
+                        <div>
+                            <p class="etapa__linha">
+                                <span class="metodo">GET</span>
+                                <code>/vivo/carreira/assistente-tecnico</code>
+                                <span class="etapa__periodo">[período]</span>
+                            </p>
+                            <h3>Assistente Técnico</h3>
+                            <p class="etapa__texto">
+                                Gestão da equipe de campo e apoio no tratamento de clientes. Controle de
+                                backlog em planilhas e criação de relatórios de acompanhamento.
+                            </p>
+                            <ul class="tags">
+                                <li>Excel</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </li>
+
+                <li class="etapa">
+                    <div class="etapa__corpo">
+
+                        <div class="etapa__midia">
+                            <svg class="icone" viewBox="0 0 64 64" aria-hidden="true">
+                                <rect x="8" y="12" width="48" height="32" rx="4" />
+                                <path d="M24 54h16M32 44v10" />
+                                <path d="M18 36v-6M28 36V22M38 36v-9M48 36v-12" />
+                            </svg>
+                        </div>
+
+                        <div>
+                            <p class="etapa__linha">
+                                <span class="metodo">GET</span>
+                                <code>/vivo/carreira/analista-servico-cliente-jr</code>
+                                <span class="etapa__periodo">[período]</span>
+                            </p>
+                            <h3>Analista de Serviço ao Cliente Jr</h3>
+                            <p class="etapa__texto">
+                                Análise de dados com foco em relatórios e dashboards em Excel e Power BI,
+                                com apoio de banco de dados, e apresentações em PowerPoint para embasar
+                                as decisões da empresa.
+                            </p>
+                            <ul class="tags">
+                                <li>Excel</li>
+                                <li>Power BI</li>
+                                <li>Banco de dados</li>
+                                <li>PowerPoint</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </li>
+
+                <li class="etapa">
+                    <div class="etapa__corpo">
+
+                        <div class="etapa__midia">
+                            <svg class="icone" viewBox="0 0 64 64" aria-hidden="true">
+                                <circle cx="28" cy="28" r="14" />
+                                <path d="M38 38l14 14" />
+                                <path d="M22 32v-4M28 32v-10M34 32v-6" />
+                            </svg>
+                        </div>
+
+                        <div>
+                            <p class="etapa__linha">
+                                <span class="metodo">GET</span>
+                                <code>/vivo/carreira/supervisor-servico-cliente</code>
+                                <span class="etapa__periodo">[período]</span>
+                            </p>
+                            <h3>Supervisor de Serviço ao Cliente</h3>
+                            <p class="etapa__nota">Cargo de supervisor, com atuação como analista de dados.</p>
+                            <p class="etapa__texto">
+                                Análise de dados com foco em relatórios e dashboards em Excel e Power BI,
+                                com apoio de banco de dados, e apresentações em PowerPoint para embasar
+                                as decisões da empresa. Também realizava a análise de pleitos do setor.
+                            </p>
+                            <ul class="tags">
+                                <li>Excel</li>
+                                <li>Power BI</li>
+                                <li>Banco de dados</li>
+                                <li>PowerPoint</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </li>
+
+                <li class="etapa">
+                    <div class="etapa__corpo">
+
+                        <div class="etapa__midia">
+                            <svg class="icone" viewBox="0 0 64 64" aria-hidden="true">
+                                <rect x="14" y="22" width="36" height="28" rx="6" />
+                                <path d="M32 22v-8M24 44h16M8 34v6M56 34v6" />
+                                <circle cx="32" cy="12" r="2.5" />
+                                <circle cx="25" cy="35" r="3" />
+                                <circle cx="39" cy="35" r="3" />
+                            </svg>
+                        </div>
+
+                        <div>
+                            <p class="etapa__linha">
+                                <span class="metodo">GET</span>
+                                <code>/vivo/carreira/analista-servico-cliente-sr</code>
+                                <span class="etapa__periodo">[período]</span>
+                            </p>
+                            <h3>Analista de Serviço ao Cliente Sr</h3>
+                            <p class="etapa__texto">
+                                Análise de dados com relatórios e dashboards em Excel e Power BI, com apoio
+                                de banco de dados, e apresentações para apoiar as decisões da empresa.
+                                Atuação também na automação de processos e em projetos que trazem novas
+                                visões e melhorias ao ambiente de trabalho, com robôs desenvolvidos em
+                                VBA e Python.
+                            </p>
+                            <ul class="tags">
+                                <li>Excel</li>
+                                <li>Power BI</li>
+                                <li>VBA</li>
+                                <li>Python</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </li>
+
+                <li class="etapa etapa--atual">
+                    <div class="etapa__corpo">
+
+                        <div class="etapa__midia">
+                            <svg class="icone" viewBox="0 0 64 64" aria-hidden="true">
+                                <ellipse cx="38" cy="16" rx="16" ry="6" />
+                                <path d="M22 16v28c0 3.3 7.2 6 16 6s16-2.7 16-6V16M22 30c0 3.3 7.2 6 16 6s16-2.7 16-6" />
+                                <path d="M12 26L4 34l8 8" />
+                            </svg>
+                        </div>
+
+                        <div>
+                            <p class="etapa__linha">
+                                <span class="metodo">GET</span>
+                                <code>/vivo/carreira/analista-suporte-operacao-sr</code>
+                                <span class="etapa__periodo">[período] até hoje</span>
+                            </p>
+                            <h3>Analista Suporte Operação Sr</h3>
+                            <ul class="etapa__lista">
+                                <li>Automação de relatórios e construção de indicadores e dashboards em Power BI, apoiando a gestão no acompanhamento de performance e na tomada de decisão.</li>
+                                <li>Estudos exploratórios e análises de dados sobre o desempenho operacional, identificando oportunidades de melhoria contínua e gerando insights para as áreas de negócio.</li>
+                                <li>Soluções em Python, SQL, Excel/VBA e PowerPoint que ligam a necessidade da operação e da gestão à solução técnica.</li>
+                                <li>Automação e otimização de processos: geração e envio automático de relatórios e e-mails, rotinas de tratamento de dados, automações em Excel/VBA e aplicações internas que reduzem o trabalho manual e aceleram as análises da equipe.</li>
+                                <li>Administração de banco de dados: [detalhar o que cuida, por exemplo servidor, rotinas e acessos].</li>
+                                <li>Ciclo completo das soluções: do levantamento da necessidade à implementação, validação e acompanhamento com as áreas usuárias.</li>
+                            </ul>
+                            <ul class="tags">
+                                <li>Power BI</li>
+                                <li>Python</li>
+                                <li>SQL</li>
+                                <li>Excel/VBA</li>
+                                <li>Administração de banco de dados</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </li>
+
+            </ol>
+
+        </section>
+
+    </main>
+
+    <!-- JS -->
+    <script src="./JS/main.js"></script>
+    <script src="./JS/navbar.js"></script>
+
+</body>
+
+</html>
